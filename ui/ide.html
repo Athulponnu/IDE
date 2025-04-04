@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HAyy </title>
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <div class="header"> Code And Diee</div>
+    <div class="control-panel">
+        Select Language:
+        &nbsp; &nbsp;
+        <select id="languages" class="languages" onchange="changeLanguage()">
+            <option value="c"> C </option>
+            <option value="cpp"> C++ </option>
+            <option value="php"> PHP </option>
+            <option value="python"> Python </option>
+            <option value="node"> Node JS </option>
+        </select>
+
+        <div class="replybox" id="replybox"></div>
+    </div>
+
+    <div class="editor" id="editor"></div>
+
+    <div class="button-container">
+        <button class="btn" onclick="executeCode()"> Execute Code </button>
+        <input type="file" id="fileInput" accept=".c,.cpp,.py,.php,.js" hidden />
+        <button id="uploadButton" class="uploadButton">Choose and Upload</button>
+        <div id="result"></div>
+    </div>
+
+
+    <div class="output"></div>
+
+    <strong > Code Error </strong>
+
+    <div class="afterun">
+        <div class="afteditr" id="afteditr"></div>
+        <div class="afteditr2" id="afteditr2"></div>
+
+        <script>
+            var aftEditor = ace.edit("afteditr");
+            aftEditor.setTheme("ace/theme/monokai"); // Dark theme
+            aftEditor.session.setMode("ace/mode/c_cpp"); // Default mode
+            aftEditor.setReadOnly(true); // Read-only mode
+
+            var aftEdi = ace.edit("afteditr2");
+            aftEdi.setTheme("ace/theme/monokai"); // Dark theme
+            aftEdi.session.setMode("ace/mode/text"); // Plain text mode
+            aftEdi.setReadOnly(true); // Read-only mode
+        </script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/lib/ace.js"></script>
+    <script src="js/lib/theme-monokai.js"></script>
+    <script src="js/ide.js"></script>
+
+</body>
+</html>
